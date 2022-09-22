@@ -1,0 +1,34 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+
+<h1></h1>
+<h1 align="center">Hello {{ user.first_name }}</h1>
+
+  <div class="container text-center">
+    <div style="font-size: 10vw" align="center">{{ user.kcal }}</div>
+    <div class="row my-custom-row justify-content-center align-items-center">
+    {% if user.carb > 0 %}
+      <div class="col"><div style="font-size: 2vw" class="p-3 border bg-light">Carb: {{ user.carb }}</div></div>
+    {% else %}
+      <div class="col"><div style="color: red; font-size: 2vw" class="p-3 border bg-light">Carb: {{ user.carb }}</div></div>
+    {% endif %}
+    {% if user.protein > 0 %}
+      <div class="col"><div style="font-size: 2vw" class="p-3 border bg-light">Protein: {{ user.protein }}</div></div>
+    {% else %}
+      <div class="col"><div style="color: red; font-size: 2vw" class="p-3 border bg-light">Protein: {{ user.protein }}</div></div>
+    {% endif %}
+    {% if user.fat > 0 %}
+      <div class="col"><div style="font-size: 2vw" class="p-3 border bg-light">Fat: {{ user.fat }}</div></div>
+    {% else %}
+      <div class="col"><div style="color: red; font-size: 2vw" class="p-3 border bg-light">Fat: {{ user.fat }}</div></div>
+    {% endif %}     
+    </div>
+  </div>
+  <br />
+  <form method="POST">
+  	<div align="center">
+    <button type="submit" class="btn btn-primary">Reset</button>
+    </div>
+  </form>
+</body>
+{% endblock %}

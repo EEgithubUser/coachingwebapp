@@ -1,0 +1,72 @@
+{% extends "base.html" %} {% block title %}Profile{% endblock %} {% block
+content %}
+<form method="POST">
+  <h3 align="center">Profile</h3>
+  <div class="form-group"><p>Gender</p>
+  		<input type="radio" id="male" name="gender_type" value="MALE">
+  		<label for="male">MALE</label><br>
+  		<input type="radio" id="female" name="gender_type" value="FEMALE">
+  		<label for="female">FEMALE</label><br>
+  </div>
+  <div class="form-group">
+    <label for="weight">Weight</label>
+    <input
+      type="number"
+      class="form-control"
+      id="weight"
+      name="weight"
+      placeholder="Enter weight in (lbs)"
+    />
+  </div>
+  <div class="form-group">
+    <label for="height">Height</label>
+    <input
+      type="number"
+      class="form-control"
+      id="height"
+      name="height"
+      placeholder="Enter height in (inches)"
+    />
+  </div>
+  <div class="form-group">
+    <label for="age">Age</label>
+    <input
+      type="number"
+      class="form-control"
+      id="age"
+      name="age"
+      placeholder="Enter age"
+    />
+  </div>
+  <div class="form-group"><p>Select your Activity Factor</p>
+  	<input type="radio" id="noob" name="activity" value="NOOB">
+  	<label for="noob">NOOB</label><br>
+  	<input type="radio" id="beginner" name="activity" value="BEGINNER">
+  	<label for="beginner">BEGINNER</label><br>
+  	<input type="radio" id="intermediate" name="activity" value="INTERMEDIATE">
+  	<label for="intermediate">INTERMEDIATE</label><br>
+  	<input type="radio" id="advanced" name="activity" value="ADVANCED">
+  	<label for="advanced">ADVANCED</label><br>
+  	<input type="radio" id="all_day" name="activity" value="ALL">
+  	<label for="all_day">ACTIVE ALL DAY</label><br>  	
+  </div>
+  <div class="form-group"><p>Are you BULKING or CUTTING?</p>
+  		<input type="radio" id="bulk" name="diet_type" value="BULK">
+  		<label for="bulk">BULK</label><br>
+  		<input type="radio" id="cut" name="diet_type" value="CUT">
+  		<label for="cut">CUT</label><br>
+  </div>
+    <div class="form-group">
+    <label for="countdown">Time Horizon</label>
+    <input
+      type="number"
+      class="form-control"
+      id="countdown"
+      name="countdown"
+      placeholder="Enter time horizon in (months)"
+    />
+  </div>
+  <br />
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
