@@ -1,4 +1,4 @@
-# this makes the "website" folder a python package
+import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
@@ -14,9 +14,9 @@ def create_app(db_url=None):
     app = Flask(__name__)
     load_dotenv()
     app.config['SECRET_KEY'] = config("SECRET_KEY")
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    app.config['SQLALCHEMY_DATABASE_URI'] = db_url or os.getenv("DATABASE_URL", "sqlite:///data.db")
     db.init_app(app)
-    migrate = Migrate(app, db)
+    migrate = Migrate(app, db, compare_type=True)
 
     from .views import views
     from .auth import auth
